@@ -40,7 +40,11 @@ disqusShortname = "whatsajunting"
     url = "https://www.linkedin.com/in/junting/"
 
 [[menu.main]]
-    name = "Blog"
+    name = "Code"
+    weight = 1
+    url  = "/code/"
+[[menu.main]]
+    name = "Words"
     weight = 1
     url  = "/posts/"
 [[menu.main]]
