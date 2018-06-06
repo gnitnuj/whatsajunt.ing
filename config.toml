@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://whatsajunting.netlify.com/"
 title = "whatsajunting"
 
 theme = "coder"
