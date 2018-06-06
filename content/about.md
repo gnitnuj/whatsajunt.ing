@@ -1,5 +1,5 @@
 +++
-title = "What Is a Junting"
+title = "What's a Junting?"
 slug = "about"
 +++
 
