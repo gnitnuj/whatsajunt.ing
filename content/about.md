@@ -1,29 +1,10 @@
 +++
-title = "About Hugo"
+title = "What Is a Junting"
 slug = "about"
 +++
 
-Hugo is a static site engine written in Go.
+As a baby Junting was born in Oakland, or colloquially referred to as, [O-Town](https://www.youtube.com/watch?v=X_YiXpG1ql0). Shortly thereafter, he was whisked away to [Kawakawa Bay](https://en.wikipedia.org/wiki/Kawakawa,_New_Zealand), New Zealand where he grew up listening to [Enya](https://www.youtube.com/watch?v=7wfYIMyS_dI), longing to be a [fighter pilot](https://www.youtube.com/watch?v=HNR_HofJ_Fs), and, eventually, to figure out the [answer to life, the universe and everything](https://www.google.com/search?q=answer+to+life,+the+universe+and+everything&oq=answer+to+life,+the+universe+and+everything). He once told his primary 3 (3rd grade) teacher that he'd found a new way to do multiplication. She said, "No, you can't do it that way" so he walked out of class never to return. From that point forward Junting questioned everything. He knew he loved his [SuperNES](https://www.youtube.com/watch?v=AacoxHFYvZw&feature=related) and rolled deep on a [WINDOWS](https://en.wikipedia.org/wiki/Windows_95) powered PC and later a [iMac](https://www.google.com/search?q=pink+imac+400mhz&source=lnms&tbm=isch&sa=X&ved=0ahUKEwidhL7x0b_bAhW3IDQIHYvQAiUQ_AUICygC&biw=1422&bih=1226) blazin' hazin' the WWWs via [56k](https://www.youtube.com/watch?v=p8XKhCfsTts).
 
+## Is there more?
 
-It makes use of a variety of open source projects including:
-
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
-
-Learn more and contribute on [GitHub](https://github.com/spf13).
-
-## Setup
-
-Some fun facts about [Hugo](http://gohugo.io/):
-
-* Built in [Go](http://golang.org/)
-* Loosely inspired by [Jekyll](http://jekyllrb.com/)
-* Primarily developed by [spf13](http://spf13.com/) on the train while commuting to and from Manhattan.
-* Coded in [Vim](http://vim.org) using [spf13-vim](http://vim.spf13.com/)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/spf13/hugo/issues/new) or [ask me on Twitter](https://twitter.com/spf13).
-
-Thanks for reading!
+Well, yes. There is this whole paragraph. Now, look at all the social media! Do you see what I just did? You can't Not look now! Action words make people do things they normally wouldn't. Here, watch this new link I just made to my [Instagram](https://www.instagram.com/whatsajunting/). Here's another one to my [Facebook](https://www.facebook.com/juntinglu). Boom! I also made a page on [LinkedIn](https://www.linkedin.com/in/junting/) but it doesn't matter too much right now because I'm wayyyyy too deep in the codes, and writing silly content blubs like this paragraph.
