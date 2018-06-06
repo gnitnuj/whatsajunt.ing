@@ -6,6 +6,7 @@ slug = "code"
 ##### Silly Projects
 
 ##### Not So Silly Projects
+- edgecast-purge | [npm](https://www.npmjs.com/package/edgecast-purge) | a library for the EdgeCast CDN
 
 ##### Gists Disguised NPM Packages
 Why? Because I wanted publicly available npm packages that were not listed on the npm registry. Privacy through obscurity I suppose...
@@ -14,7 +15,6 @@ Why? Because I wanted publicly available npm packages that were not listed on th
 - AccumulateFiles.js | [gist](https://gist.github.com/gnitnuj/833bcd35413f0f90d692c7d8d5bc22c8) | recursively search a directory and return an array of accumulated files
 - ContentType.js | [gist](https://gist.github.com/gnitnuj/9318fbe9eae86a6e1f7e01b7eaa28cc6) | given a file path, return content type
 - Promisified Slack Webhooks | [gist](https://gist.github.com/gnitnuj/1b12b00c7993f37dc6e392623990b9e0) | a little snippet I use to DRY up the CI/CD process at true[X]
-
 
 ##### Open Source Contributions
 - homebrew-cask | [github](https://github.com/Homebrew/homebrew-cask) | a CLI workflow for the administration of macOS applications distributed as binaries
