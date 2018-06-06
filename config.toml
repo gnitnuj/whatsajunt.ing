@@ -1,4 +1,4 @@
-baseurl = "http://www.whatsajunting.com"
+baseurl = "/"
 title = "whatsajunting"
 
 theme = "coder"
