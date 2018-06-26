@@ -13,6 +13,7 @@ slug = "code"
 ##### Gists Disguised NPM Packages
 Why? Because I wanted publicly available npm packages that were not listed on the npm registry. Privacy through obscurity I suppose...
 
+- GoifyPromise.js | [gist](https://gist.github.com/gnitnuj/a7401cf383d378ffc56c93152986dded) | a super useful library to "goify" promises in order to clean up async/await try/catch blocks
 - S3Upload.js | [gist](https://gist.github.com/gnitnuj/eb216ab0f687c7d9f3691f2efa7715bb) | a small library I use to upload files to S3
 - AccumulateFiles.js | [gist](https://gist.github.com/gnitnuj/833bcd35413f0f90d692c7d8d5bc22c8) | recursively search a directory and return an array of accumulated files
 - ContentType.js | [gist](https://gist.github.com/gnitnuj/9318fbe9eae86a6e1f7e01b7eaa28cc6) | given a file path, return content type
