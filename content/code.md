@@ -5,10 +5,10 @@ slug = "code"
 
 ##### Silly Projects
 - commoji | [github](https://github.com/gnitnuj/commoji) | a command line git wrapper that translates human into emoji (where possible)
-- polymer-konami | [github](https://github.com/gnitnuj/polymer-konami) | a Polymer.js element that listed for the konami code, then executes a user provided function
+- polymer-konami | [github](https://github.com/gnitnuj/polymer-konami) | a Polymer.js element that listens for the konami code, then executes a user provided function
 
 ##### Not So Silly Projects
-- edgecast-purge | [npm](https://www.npmjs.com/package/edgecast-purge) | a library for the EdgeCast CDN
+- edgecast-purge | [npm](https://www.npmjs.com/package/edgecast-purge) | a library for the EdgeCast CDN (mainly used to purge assets)
 
 ##### Gists Disguised NPM Packages
 Why? Because I wanted publicly available npm packages that were not listed on the npm registry. Privacy through obscurity I suppose...
