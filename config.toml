@@ -40,6 +40,10 @@ disqusShortname = "whatsajunting"
     url = "https://www.linkedin.com/in/junting/"
 
 [[menu.main]]
+    name = "Random"
+    weight = 1
+    url  = "/random/"
+[[menu.main]]
     name = "Code"
     weight = 1
     url  = "/code/"
