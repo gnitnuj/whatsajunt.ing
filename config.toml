@@ -1,6 +1,8 @@
 baseurl = "https://www.whatsajunting.com/"
 title = "whatsajunting"
 
+googleAnalytics = "UA-56349103-1"
+
 theme = "coder"
 
 languagecode = "en"
