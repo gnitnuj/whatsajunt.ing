@@ -3,6 +3,9 @@ title = "Code"
 slug = "code"
 +++
 
+##### Bloggings
+- file uploads using s3 presigned urls, golang, and js| [post](posts/s3-presigned) | some code snippets relate to the title of the post
+
 ##### Silly Projects
 - commoji | [github](https://github.com/gnitnuj/commoji) | a command line git wrapper that translates human into emoji (where possible)
 - polymer-konami | [github](https://github.com/gnitnuj/polymer-konami) | a Polymer.js element that listens for the konami code, then executes a user provided function
