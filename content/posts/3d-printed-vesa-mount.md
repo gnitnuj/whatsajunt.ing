@@ -19,4 +19,4 @@ Had there been more interest I might have been inclined to have my 3d printed mo
 I've since removed the listing, but if you're one of the 0 people in the world who have ended up here and also need this mount, then send me message and I'll be glad to have one printed for you.
 
 
-![Vesa Mount](images/3501-vesa-mount.jpg)
+![Vesa Mount](/images/3501-vesa-mount.jpg)

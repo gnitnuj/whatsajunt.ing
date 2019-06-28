@@ -35,7 +35,7 @@ Materials:
 
 tl;dr:
 
-- materials ![Dog Run 1](images/dog-run-1.jpg)
-- foundation ![Dog Run 2](images/dog-run-2.jpg)
-- almost there ![Dog Run 3](images/dog-run-3.jpg)
-- donesies ![Dog Run 4](images/dog-run-4.jpg)
+- materials ![Dog Run 1](/images/dog-run-1.jpg)
+- foundation ![Dog Run 2](/images/dog-run-2.jpg)
+- almost there ![Dog Run 3](/images/dog-run-3.jpg)
+- donesies ![Dog Run 4](/images/dog-run-4.jpg)
