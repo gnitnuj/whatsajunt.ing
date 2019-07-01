@@ -3,7 +3,7 @@ title = "whatsajunting"
 
 googleAnalytics = "UA-56349103-1"
 
-theme = "coder"
+theme = "hugo-coder"
 
 languagecode = "en"
 
