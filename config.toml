@@ -21,8 +21,8 @@ pygmentscodefencesguesssyntax = true
     info = "Software Engineer | Aspiring Emojineer"
     avatarurl = "images/avatar.jpg"
 
-    hideCredits = false
-    hideCopyright = false
+    hideCredits = true
+    hideCopyright = true
 
     rtl = false
 
