@@ -8,6 +8,8 @@ categories = ["woodworking", "home improvement"]
 
 ## Dog Run 2.0
 
+![GIF](/images/dog_run_video.gif)
+
 A year later, I finally made some time to upgrade the dog run I built just under a year ago. So some backgound, the house I live in doesn't really have an easy way to access the backyard, but does have a rooftop patio, so a dog run with irrigation that drains directly into the city's sewage system was an ideal solution. Anyways, I am writing this so that my learnings can serve as inspiration for anyone else that might want to try their hand at building their own. You'll find a short description of 1.0, followed by some changes I made in 2.0, a meterials list, and a few pictures below.
 
 The 1.0 design was fairly basic and consisted of the following:

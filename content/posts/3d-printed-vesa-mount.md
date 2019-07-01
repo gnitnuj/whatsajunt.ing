@@ -8,6 +8,8 @@ categories = ["3D Printing"]
 
 ## 3d printed BENQ 3501r vesa mount, a sales experiment
 
+![GIF](/images/vesa_mount_video.gif)
+
 So I bought a BENQ monitor, which I've been competely happy with other than the VESA mount not being available for purchase... From reading the BENQ forums, it seems as though the manufaturer that they contracted the work out to went out of business, and for some reason they've decided against finding a replacement.
 
 Luckily, some light googling led me to this [thing](https://www.thingiverse.com/thing:3021381) on thingiverse, where the CAD files were readily available. After experimenting with different filament types and fill levels with my co-worker at the time, I settled on 50% fill using PLA+, and 6 hours later I had a mount which has showed no signs of deterioration over the last quarter.
