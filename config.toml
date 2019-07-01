@@ -14,8 +14,6 @@ pygmentsstyle = "bw"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-disqusShortname = "whatsajunting"
-
 [params]
     author = "Junting Lu"
     description = "Junting's personal website"
