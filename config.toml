@@ -41,9 +41,9 @@ pygmentscodefencesguesssyntax = true
     url = "https://www.linkedin.com/in/junting/"
 
 [[menu.main]]
-    name = "Random"
+    name = "Misc."
     weight = 1
-    url  = "/random/"
+    url  = "/misc/"
 [[menu.main]]
     name = "Code"
     weight = 2
