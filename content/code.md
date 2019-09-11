@@ -3,8 +3,10 @@ title = "Code"
 slug = "code"
 +++
 
-##### Project Templates
-- Lambda Skeleton | [github](https://github.com/gnitnuj/lambdaSkeleton) | a starter project for node-based lambdas
+##### Project Skeletons
+- Lambda Skeleton | [github](https://github.com/gnitnuj/lambdaSkeleton) | a
+starter project for node-based lambdas
+- GoDoRe | [github](https://github.com/gnitnuj/GoDoRe) | a Go Docker React starter project
 
 ##### Bloggings
 - file uploads using s3 presigned urls, golang, and js| [post](/posts/s3-presigned) | some code snippets related to the title of the post
