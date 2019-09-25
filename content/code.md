@@ -3,6 +3,9 @@ title = "Code"
 slug = "code"
 +++
 
+##### Lambda All The Things
+- s3Presigned | [github](https://github.com/gnitnuj/s3PresignedLambda) | a node-based lambda that returns an s3 presigned PUT url
+
 ##### Project Skeletons
 - Lambda Skeleton | [github](https://github.com/gnitnuj/lambdaSkeleton) | a
 starter project for node-based lambdas
@@ -27,6 +30,6 @@ Why? Because I wanted publicly available npm packages that were not listed on th
 - ContentType.js | [gist](https://gist.github.com/gnitnuj/9318fbe9eae86a6e1f7e01b7eaa28cc6) | given a file path, return content type
 - Promisified Slack Webhooks | [gist](https://gist.github.com/gnitnuj/1b12b00c7993f37dc6e392623990b9e0) | a little snippet I use to DRY up the CI/CD process at true[X]
 
-##### Open Source Contributions
+##### Random OS Contributions
 - homebrew-cask | [github](https://github.com/Homebrew/homebrew-cask) | a CLI workflow for the administration of macOS applications distributed as binaries
 - rack-ssl-enforcer | [github](https://github.com/tobmatth/rack-ssl-enforcer) | a simple Rack middleware to enforce ssl connections
