@@ -8,5 +8,6 @@ slug = "misc"
 - 3D Printed Vesa Mount | [post](/posts/3d-printed-vesa-mount) | new monitor; need mount.
 
 ##### Random
-- Rebuidling Lombok | [post](/posts/rebuilding-lombok) | Adventures in philanthropic investing
-- Best Mobile Plan? | [post](/posts/best-mobile-plan) | thoughts on dual sim plan options
+- Rebuidling Lombok Pt. 2 | [post](/posts/rebuilding-lombok-2) | more adventures in philanthropic investing
+- Rebuidling Lombok | [post](/posts/rebuilding-lombok) | adventures in philanthropic investing
+- Best Mobile Plan? | [post](/posts/best-mobile-plan) | ramblings on dual sim plan options
