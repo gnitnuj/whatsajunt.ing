@@ -18,7 +18,7 @@ pygmentscodefencesguesssyntax = true
     author = "Junting Lu"
     description = "Junting's personal website"
     keywords = "blog,developer,personal"
-    info = "Software Engineer | Aspiring Emojineer"
+    info = "Aspiring Emojineer | Engineering Manager"
     avatarurl = "images/avatar.jpg"
 
     hideCredits = true
