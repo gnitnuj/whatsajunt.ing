@@ -56,3 +56,8 @@ pygmentscodefencesguesssyntax = true
     name = "About"
     weight = 4
     url = "/about/"
+
+[[headers]]
+    for = "/*"
+        [headers.values]
+        Access-Control-Allow-Origin = "*"
