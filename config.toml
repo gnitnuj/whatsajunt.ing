@@ -16,7 +16,7 @@ style = "github-dark"
     author = "Junting Lu"
     description = "Junting's personal website"
     keywords = "blog,developer,personal"
-    info = "Aspiring Emojineer | Engineering Manager"
+    info = ["Aspiring Emojineer", "Occasional Engineering Manager"]
     avatarurl = "images/avatar.jpg"
     # gravatar = "junting.lu@gmail.com"
 
