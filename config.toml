@@ -1,18 +1,16 @@
 baseurl = "https://whatsajunting.com/"
 title = "whatsajunting"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
 
 googleAnalytics = "UA-56349103-1"
-
-theme = "hugo-coder"
-
-languagecode = "en"
 
 paginate = 20
 canonifyurls = true
 
-pygmentsstyle = "bw"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
+[markup.highlight]
+style = "github-dark"
 
 [params]
     author = "Junting Lu"
@@ -20,9 +18,15 @@ pygmentscodefencesguesssyntax = true
     keywords = "blog,developer,personal"
     info = "Aspiring Emojineer | Engineering Manager"
     avatarurl = "images/avatar.jpg"
+    # gravatar = "junting.lu@gmail.com"
 
     hideCredits = true
     hideCopyright = true
+
+    enableTwemoji = true
+
+    colorScheme = "auto"
+    hidecolorschemetoggle = false
 
     rtl = false
 
