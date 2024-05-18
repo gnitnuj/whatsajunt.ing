@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>whatsajunting?</title>
+    <meta name="author" content="Junting" />
+    <meta name="description" content="whatsajunting?" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
+    />
+    <link
+      rel="stylesheet"
+      href="./base.css"
+      type="text/css"
+      media="screen, projection"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#7BE4D5" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="whatsajunting?" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="whatsajunting?" />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="/icons/icon-192x192.png"
+    />
+
+    <meta
+      name="msapplication-TileImage"
+      content="images/manifest/icon-192x192.png"
+    />
+    <meta name="msapplication-TileColor" content="#7BE4D5" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="my-app" />
+    <meta property="og:image" content="icons/icon-192x192.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+    <link href="./css2" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="./pygments.css" />
+  </head>
+
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-5Y4Y4Q9GJ4"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5Y4Y4Q9GJ4');
+  </script>
+
+  <body>
+    <nav>
+      <ul>
+        <li id="home_link" class="og"><a href="/">🏠</a></li>
+        <li><a href="/about">about</a></li>
+        <li><a href="/work">hire me</a></li>
+        <li><a href="/blog">posts</a></li>
+        <li><a href="/projects">projects</a></li>
+      </ul>
+    </nav>
+
+    <div class="splash">
+      <div class="splash-wrapper">
+        <div class="splash-copy">
+          <h1>Junting <br />Lu</h1>
+          <p>
+            I'm an <b>aspiring emojineer</b> who builds delightful web
+            experiences. I can advise your company about the
+            <b>web platform</b>, performance, creative user interactions, and technology management.
+          </p>
+        </div>
+        <div id="birbs">
+          <canvas
+            width="680"
+            height="680"
+            style="width: 340px; height: 340px"
+          ></canvas>
+          <div class="birbs-legend">
+            <b>click this art</b> to regenerate it
+            <button>[<b>?</b>]</button>
+            <div class="birbs-note">
+              This is a little piece of art. It is randomly generated every
+              time you refresh the page. You can also regenerate it however many
+              times you want by clicking on it. Every art is new!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dots"></div>
+    </div>
+
+    <section class="content">
+      <style>
+        #home_link {
+          display: none !important;
+        }
+      </style>
+      <p>
+        My 9-to-5 is engineering management (*womp womp) at an advertising technology 
+        company, where I lead a multi-disciplinary team primarily focused on ad experience, 
+        performance, and measurement. My team also owns the <a href="https://phonic.ai/">
+        Phonic</a> survey platform, and color me delulu, but gunning for survey dinosaurs like 
+        Qualtrics and SurveyMonkey.
+      </p>
+      <p>
+        Look here toread a bit more <a href="/about">about me</a> and my past work. Most of my personal code
+        is on <a href="https://github.com/gnitnuj">GitHub</a>, though admittedly, I do 
+        less coding than I'd like these days.
+      </p>
+      <p>
+        I am available for freelance work for prototyping, in a consulting
+        capacity, or as a tech advisor. If you would like to get in touch with
+        me about working with you,
+        <a href="mailto:junting.lu@gmail.com">email me</a> and we'll chat!
+      </p>
+      <hr />
+      
+      <h2>Writing</h2>
+      <p>
+        Every couple years I give writing a shot. You can browse the full
+        <a href="/blog">blog</a>, but it's never a lasting initiative. It's
+        usually about tech things that I've learnt or enjoyed, though the 
+        frequency has always left me wanting.
+      </p>
+      <p>
+        <br />
+        <b>RSS feeds</b>: You | Don't | Need | Them | So | Here | They're | Not | ;)
+      </p>
+
+      <h2>Projects</h2>
+      <p>
+        I build silly <a href="/projects">side projects</a> or little tools for work.
+        that are either an attempt at "art", or are a thing that I need in my
+        life and can't find elsewhere (like, practicing ASL fingerspelling,
+        ukulele chords, or uhhhh understanding time keeping in JavaScript).
+      </p>
+    </section>
+    
+    <script src="./birds.js"></script>
+
+    <script>
+      'use strict';
+
+      // Load the pygments stylesheet so that it's not render blocking.
+      var head = document.head;
+      var link = document.createElement('link');
+      link.type = 'text/css';
+      link.rel = 'stylesheet';
+      link.href = '/css/pygments.css';
+      head.appendChild(link);
+    </script>
+  </body>
+</html>
