@@ -1,1 +1,298 @@
-Projects, a WIP.
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>Projects – Junting</title>
+    <meta name="author" content="Junting" />
+    <meta name="description" content="Junting&#39;s projects" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/base.css"
+      type="text/css"
+      media="screen, projection"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <meta name="theme-color" content="#7BE4D5" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Junting&#39;s blog" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Junting&#39;s blog" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="/projects/icons/icon-192x192.png"
+    />
+
+    <meta
+      name="msapplication-TileImage"
+      content="images/manifest/icon-192x192.png"
+    />
+    <meta name="msapplication-TileColor" content="#7BE4D5" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="my-app" />
+    <meta property="og:image" content="icons/icon-192x192.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+    <link href="./css/css2" rel="stylesheet" />
+    <script type="text/javascript" async="" src="./css/ga.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5Y4Y4Q9GJ4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-5Y4Y4Q9GJ4');
+    </script>
+
+    <link type="text/css" rel="stylesheet" href="./css/pygments.css" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li id="home_link" class="og"><a href="/">🏠</a></li>
+        <li><a href="/about">about</a></li>
+        <li><a href="/work">hire me</a></li>
+        <li><a href="/blog">posts</a></li>
+        <li><a href="/projects">projects</a></li>
+      </ul>
+    </nav>
+    <div class="splash">
+      <div class="splash-wrapper">
+        <div class="splash-copy">
+          <h1>Projects</h1>
+          <p></p>
+        </div>
+        <div id="birbs">
+          <canvas
+            width="680"
+            height="680"
+            style="width: 340px; height: 340px"
+          ></canvas>
+          <div class="birbs-legend">
+            <b>click this art</b> to regenerate it
+            <button>[<b>?</b>]</button>
+            <div class="birbs-note">
+              This is a little piece of art. It is randomly generated every time
+              you refresh the page. You can also regenerate it however many
+              times you want by clicking on it. Every art is new!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dots"></div>
+    </div>
+    <section class="content">
+      <style>
+        p {
+          font-size: var(--font-size-s);
+        }
+        .content .listing.table li > a {
+          flex-shrink: 0;
+          flex-grow: 0;
+          width: 40%;
+        }
+        .content .listing.table li > div {
+          flex-grow: 1;
+          text-transform: none;
+          letter-spacing: 0;
+          margin-left: var(--spacing-xs);
+        }
+        .content .listing.table li > div:before {
+          content: '→ ';
+          font-weight: bold;
+        }
+        @media screen and (max-width: 600px) {
+          .content .listing.table li {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-bottom: var(--spacing-m);
+          }
+          .content .listing.table li > div {
+            margin-left: 0;
+          }
+          .content .listing.table li > a {
+            width: 100% !important;
+            flex-shrink: 0;
+          }
+        }
+      </style>
+
+      <!-- <h2 class="with-butt">2024</h2>
+      <ul class="listing table projects">
+        <li>
+          <a href=""
+            >test</a
+          >
+          <div>test test</div>
+        </li>
+      </ul>
+      <h2 class="with-butt">2023</h2>
+      <ul class="listing table projects">
+        <li>
+          <a href=""
+            >test</a
+          >
+          <div>test test</div>
+        </li>
+      </ul> -->
+
+      <h2 class="with-butt">&lt; 2018</h2>
+
+      <h3>Lambda All The Things</h3>
+      <ul class="listing table projects">
+        <li>
+          <a href="https://github.com/gnitnuj/s3PresignedLambda">s3Presigned</a>
+          <div>node-based lambda that returns an s3 presigned PUT url</div>
+        </li>
+      </ul>
+
+      <h2>Project Skeletons</h2>
+      <ul class="listing table projects">
+        <li>
+          <a href="https://github.com/gnitnuj/lambdaSkeleton"
+            >Lambda Skeleton</a
+          >
+          <div>project for node-based lambdas</div>
+        </li>
+        <li>
+          <a href="https://github.com/gnitnuj/GoDoRe">GoDoRe</a>
+          <div>Docker React starter project</div>
+        </li>
+      </ul>
+
+      <h2>Silly Projects</h2>
+      <ul class="listing table projects">
+        <li>
+          <a href="https://github.com/gnitnuj/commoji">commoji</a>
+          <div>
+            command line git wrapper that translates human into emoji (where
+            possible)
+          </div>
+        </li>
+        <li>
+          <a href="https://github.com/gnitnuj/polymer-konami">polymer-konami</a>
+          <div>
+            Polymer.js element that listens for the konami code, then executes a
+            user provided function
+          </div>
+        </li>
+      </ul>
+
+      <h2>Not So Silly Projects</h2>
+      <ul class="listing table projects">
+        <li>
+          <a href="https://www.npmjs.com/package/edgecast-purge"
+            >edgecast-purge</a
+          >
+          <div>library for the EdgeCast CDN (mainly used to purge assets)</div>
+        </li>
+      </ul>
+
+      <h2>Gists Disguised NPM Packages</h2>
+      <p>
+        Why? Because I wanted publicly available npm packages that were not
+        listed on the npm registry. Privacy through obscurity I suppose...
+      </p>
+      <ul class="listing table projects">
+        <li>
+          <a
+            href="https://gist.github.com/gnitnuj/a7401cf383d378ffc56c93152986dded"
+            >GoifyPromise.js</a
+          >
+          <div>
+            a super useful library to "goify" promises in order to clean up
+            async/await try/catch blocks
+          </div>
+        </li>
+        <li>
+          <a
+            href="https://gist.github.com/gnitnuj/eb216ab0f687c7d9f3691f2efa7715bb"
+            >S3Upload.js</a
+          >
+          <div>a small library I use to upload files to S3</div>
+        </li>
+        <li>
+          <a
+            href="https://gist.github.com/gnitnuj/833bcd35413f0f90d692c7d8d5bc22c8"
+            >AccumulateFiles.js</a
+          >
+          <div>
+            recursively search a directory and return an array of accumulated
+            files
+          </div>
+        </li>
+        <li>
+          <a
+            href="https://gist.github.com/gnitnuj/9318fbe9eae86a6e1f7e01b7eaa28cc6"
+            >ContentType.js</a
+          >
+          <div>given a file path, return content type</div>
+        </li>
+        <li>
+          <a
+            href="https://gist.github.com/gnitnuj/1b12b00c7993f37dc6e392623990b9e0"
+            >Promisified Slack Webhooks</a
+          >
+          <div>
+            a little snippet I use to DRY up the CI/CD process at true[X]
+          </div>
+        </li>
+      </ul>
+
+      <h2>Random OS Contributions</h2>
+      <ul class="listing table projects">
+        <li>
+          <a href="https://github.com/Homebrew/homebrew-cask">homebrew-cask</a>
+          <div>
+            a CLI workflow for the administration of macOS applications
+            distributed as binaries
+          </div>
+        </li>
+        <li>
+          <a href="https://github.com/tobmatth/rack-ssl-enforcer"
+            >rack-ssl-enforcer</a
+          >
+          <div>a simple Rack middleware to enforce ssl connections</div>
+        </li>
+      </ul>
+    </section>
+    <script src="./js/birds.js"></script>
+
+    <script>
+      'use strict';
+
+      // Load the pygments stylesheet so that it's not render blocking.
+      var head = document.head;
+      var link = document.createElement('link');
+      link.type = 'text/css';
+      link.rel = 'stylesheet';
+      link.href = '/css/pygments.css';
+      head.appendChild(link);
+    </script>
+  </body>
+</html>
