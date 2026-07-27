@@ -51,8 +51,13 @@
         <meta name="msapplication-tap-highlight" content="no" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="my-app" />
-        <meta property="og:image" content="icons/icon-192x192.png" />
+        <meta property="og:site_name" content="whatsajunting?" />
+        <meta property="og:title" content="Posts by Junting Lu" />
+        <meta property="og:description" content="Writing about projects, the web, and things Junting Lu has learned or enjoyed." />
+        <meta property="og:url" content="https://whatsajunt.ing/blog.html" />
+        <meta property="og:image" content="https://whatsajunt.ing/icons/icon-512x512.png" />
+        <meta name="twitter:card" content="summary" />
+        <link rel="canonical" href="https://whatsajunt.ing/blog.html" />
         <link rel="preconnect" href="https://fonts.gstatic.com/" />
         <link href="./css/css2" rel="stylesheet" />
     </head>
@@ -97,8 +102,8 @@
                     ></canvas>
                     <div class="birbs-legend">
                         <b>click this art</b> to regenerate it
-                        <button>[<b>?</b>]</button>
-                        <div class="birbs-note">
+                        <button type="button" aria-expanded="false" aria-controls="birbs-note">[<b>?</b>]</button>
+                        <div class="birbs-note" id="birbs-note" hidden>
                             This is little piece of art. It is randomly
                             generated every time you refresh the page. You can
                             also regenerate it however many times you want by

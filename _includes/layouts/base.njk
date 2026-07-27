@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }}{% if titleSuffix %} – {{ titleSuffix }}{% endif %}</title>
+    <meta name="author" content="Junting Lu" />
+    <meta name="description" content="{{ description }}" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="icon" href="/images/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#7BE4D5" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="whatsajunting?" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:url" content="https://whatsajunt.ing{{ page.url }}" />
+    <meta property="og:image" content="https://whatsajunt.ing/icons/icon-512x512.png" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://whatsajunt.ing{{ page.url }}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="/css/css2" rel="stylesheet" />
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {% include "partials/navigation.njk" %}
+    <main>{{ content | safe }}</main>
+    {% include "partials/analytics.njk" %}
+  </body>
+</html>

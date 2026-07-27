@@ -66,7 +66,27 @@ function birds(p) {
       return;
     }
 
-    canvas.addEventListener('click', () => draw());
+    const regenerate = () => draw();
+    canvas.addEventListener('click', regenerate);
+    canvas.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        regenerate();
+      }
+    });
+    canvas.tabIndex = 0;
+    canvas.setAttribute('role', 'button');
+    canvas.setAttribute('aria-label', 'Regenerate the artwork');
+
+    const helpButton = document.querySelector('.birbs-legend button');
+    const note = document.querySelector('.birbs-note');
+    if (helpButton && note) {
+      helpButton.addEventListener('click', () => {
+        const isExpanded = helpButton.getAttribute('aria-expanded') === 'true';
+        helpButton.setAttribute('aria-expanded', String(!isExpanded));
+        note.hidden = isExpanded;
+      });
+    }
     context = canvas.getContext('2d');
 
     canvas.style.width = rekt.width + 'px';

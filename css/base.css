@@ -154,6 +154,11 @@ iframe {
   cursor: pointer;
   user-select: none;
 }
+#birbs canvas:focus-visible,
+.birbs-legend button:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
 .birbs-legend {
   text-align: center;
 }
@@ -181,7 +186,7 @@ iframe {
   display: none;
 }
 
-.birbs-legend button:hover + .birbs-note {
+.birbs-note:not([hidden]) {
   display: block;
 }
 
