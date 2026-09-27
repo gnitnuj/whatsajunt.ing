@@ -601,3 +601,181 @@ h2 code {
     margin: 30px 0;
   }
 }
+
+/* Hallmark audit fixes: fluid artwork, compact headers, readable links and archives. */
+html {
+  --color-link: #c62828;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+.splash-wrapper > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+#birbs {
+  flex: 0 1 340px;
+  width: 340px;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+#birbs canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.birbs-legend {
+  margin-top: var(--spacing-s);
+}
+
+.birbs-legend button {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.birbs-legend button > b {
+  color: var(--color-link);
+}
+
+.birbs-note {
+  z-index: 1;
+  top: auto;
+  bottom: var(--spacing-m);
+  left: auto;
+  right: 0;
+  width: min(280px, calc(100vw - 48px));
+  text-align: left;
+}
+
+.splash.compact {
+  min-height: 0;
+  padding: var(--spacing-s) 0 var(--spacing);
+}
+
+.splash.compact .splash-copy {
+  flex: 1;
+  max-width: none;
+}
+
+.splash.compact h1 {
+  font-size: clamp(32px, 5vw, 42px);
+  line-height: 1.1;
+}
+
+.splash.compact #birbs {
+  flex: 0 0 160px;
+  width: 160px;
+  margin: var(--spacing-s) 0;
+}
+
+.splash.compact .birbs-legend {
+  font-size: var(--font-size-xs);
+}
+
+.splash .contact-link {
+  margin: var(--spacing) 0 0;
+  font-size: var(--font-size);
+}
+
+.contact-link a {
+  white-space: nowrap;
+}
+
+a {
+  color: var(--color-link);
+}
+
+a:hover,
+a:active {
+  color: var(--blue);
+}
+
+a:focus-visible,
+button:focus-visible,
+video:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.content .listing.fancy a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.content .listing.fancy a:is(:hover, :focus-visible, :active) {
+  color: var(--blue);
+}
+
+.content .listing.fancy a:hover::before {
+  content: none;
+}
+
+.archive .listing.table li {
+  gap: var(--spacing);
+  padding: var(--spacing-s) 0;
+}
+
+.archive .listing h2 {
+  margin: var(--spacing) 0 var(--spacing-s);
+}
+
+.archive .listing li:first-child h2 {
+  margin-top: 0;
+}
+
+.content.archive .listing li span:not(.talk-title) {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .splash.compact .splash-wrapper {
+    justify-content: flex-start;
+    gap: var(--spacing);
+  }
+
+  .splash.compact .splash-copy {
+    flex-basis: 100%;
+  }
+
+  .splash.compact #birbs {
+    flex-basis: 144px;
+    width: 144px;
+    margin: 0;
+  }
+
+  .splash.compact .birbs-note {
+    left: 0;
+    right: auto;
+  }
+
+  .archive .listing.table li {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .content.archive .listing li span:not(.talk-title) {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none;
+  }
+}

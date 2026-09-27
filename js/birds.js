@@ -59,7 +59,6 @@ function birds(p) {
   setup();
 
   function setup() {
-    const rekt = document.getElementById('birbs').getBoundingClientRect();
     const canvas = document.querySelector('#birbs > canvas');
 
     if (!canvas) {
@@ -89,21 +88,23 @@ function birds(p) {
     }
     context = canvas.getContext('2d');
 
-    canvas.style.width = rekt.width + 'px';
-    canvas.style.height = rekt.height + 'px';
-    // get retinaed.
-    rekt.width *= window.devicePixelRatio;
-    rekt.height *= window.devicePixelRatio;
-    context.scale(window.devicePixelRatio, window.devicePixelRatio);
+    const resize = () => {
+      const size = canvas.getBoundingClientRect().width;
+      const pixelSize = Math.round(size * window.devicePixelRatio);
+      if (!size || (canvas.width === pixelSize && p.width === size)) return;
 
-    canvas.width = rekt.width;
-    canvas.height = rekt.height;
+      canvas.width = pixelSize;
+      canvas.height = pixelSize;
+      context.setTransform(pixelSize / size, 0, 0, pixelSize / size, 0, 0);
+      p.width = size;
+      p.height = size;
+      p.noStroke();
+      draw();
+    };
 
-    p.width = rekt.width;
-    p.height = rekt.height;
-    
-    p.noStroke();
-    draw();
+    resize();
+    new ResizeObserver(resize).observe(canvas);
+    window.addEventListener('resize', resize);
   }
 
   function draw() {
