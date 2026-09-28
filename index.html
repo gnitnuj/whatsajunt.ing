@@ -6,7 +6,7 @@
 
     <title>whatsajunting?</title>
     <meta name="author" content="Junting" />
-    <meta name="description" content="Junting Lu is an emojineer and web-platform consultant who builds delightful web experiences." />
+    <meta name="description" content="Meet Junting Lu, a software engineer and aspiring emojineer. Born in Oakland, raised in New Zealand, based in Seattle." />
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
     <link rel="stylesheet" href="./css/base.css" type="text/css" media="screen, projection" />
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
@@ -26,7 +26,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="whatsajunting?" />
     <meta property="og:title" content="whatsajunting?" />
-    <meta property="og:description" content="Junting Lu is an emojineer and web-platform consultant who builds delightful web experiences." />
+    <meta property="og:description" content="Meet Junting Lu, a software engineer and aspiring emojineer. Born in Oakland, raised in New Zealand, based in Seattle." />
     <meta property="og:url" content="https://whatsajunt.ing/" />
     <meta property="og:image" content="https://whatsajunt.ing/icons/icon-512x512.png" />
     <meta name="twitter:card" content="summary" />
@@ -47,32 +47,29 @@
 </script>
 
 <body>
-    <nav>
+    <nav aria-label="Primary navigation">
         <ul>
-            <li id="home_link" class="og"><a href="/">🏠</a></li>
+            <li id="home_link" class="og"><a href="/" aria-label="Home">🏠</a></li>
             <li><a href="/about.html">about</a></li>
-            <li><a href="/work.html">hire me</a></li>
-            <!-- <li><a href="/blog.html">posts</a></li> -->
-            <!-- <li><a href="/projects.html">projects</a></li> -->
+            <li><a href="https://github.com/gnitnuj">GitHub</a></li>
         </ul>
     </nav>
 
-    <div class="splash">
+    <main>
+    <div class="splash personal-intro">
         <div class="splash-wrapper">
             <div class="splash-copy">
                 <h1>Junting <br />Lu</h1>
                 <p>
-                    I'm an <b>aspiring emojineer</b> who builds delightful
-                    web experiences. I can advise your company about
-                    the <b>web platform</b>, performance, creative user
-                    interactions, and technology management.
+                    I'm a <b>software engineer</b> and aspiring emojineer.
+                    I like building things and figuring out how they work.
                 </p>
             </div>
             <div id="birbs">
                 <canvas width="680" height="680"></canvas>
                 <div class="birbs-legend">
                     <b>click this art</b> to regenerate it
-                    <button type="button" aria-expanded="false" aria-controls="birbs-note">[<b>?</b>]</button>
+                    <button type="button" aria-label="About the artwork" aria-expanded="false" aria-controls="birbs-note">[<b>?</b>]</button>
                     <div class="birbs-note" id="birbs-note" hidden>
                         This is a little piece of art. It is randomly
                         generated every time you refresh the page. You can
@@ -92,54 +89,26 @@
             }
         </style>
         <p>
-            As of March 2025, I'm also the principal at Julu & Co., a consulting company I founded.
-            Beyond accepting side gigs, I'm really interested in answering the question:
-            "Can I get someone I don't know to pay $1 for something I built?"
+            I was born in Oakland, grew up in New Zealand, and now live in Seattle.
         </p>
         <p>
-            My last 9-to-5 was engineering management at an advertising
-            technology company, where I led a multi-disciplinary team
-            primarily focused on ad experience, performance, and
-            measurement. My team also owned the
-            <a href="https://phonic.ai/">phonic.ai</a> survey platform.
+            I make things, usually because there's something I need
+            or an idea I want to try. Sometimes that means a little tool;
+            sometimes it means a rooftop dog run for my poodle.
         </p>
         <p>
-            Look here to read a bit more <a href="/about">about me</a> and
-            my past work. Most of my personal code is on
-            <a href="https://github.com/gnitnuj">GitHub</a>, though
-            admittedly, I do less coding than I'd like these days.
+            These days I run <a href="https://juluco.dev/">Julu &amp; Co.</a>,
+            my software consultancy. Outside of code, I'm working on a surf
+            retreat in Medewi with my sister. You can find that and other places
+            at <a href="https://farfaraway.holdings/">Far Far Away Holdings</a>.
         </p>
         <p>
-            I am available for freelance work for prototyping, in a
-            consulting capacity, or as a tech advisor. If you would like to
-            get in touch with me about working with you,
-            <a href="mailto:junting.lu@gmail.com">email me</a> and we'll
-            chat!
-        </p>
-        <hr />
-
-        <h2>Projects</h2>
-        <p>
-            I build silly <a href="/projects">side projects</a> and little
-            tools for work. They're usually either an attempt at
-            emojineering, or something I need in my life and can't
-            find elsewhere.
-        </p>
-
-        <h2>Writing</h2>
-        <p>
-            Every couple of years I give writing a shot. You can browse the
-            full
-            <a href="/blog">blog</a>, but it's never a lasting initiative.
-            It's usually about things I've learned or enjoyed, though
-            the frequency of my updates has always left me wanting.
-        </p>
-        <p>
-            <br />
-            <b>RSS feeds</b>: So | Rarely | Updated | So | Here | They're |
-            Not | :p
+            Read a little more <a href="/about.html">about me</a>, poke around my
+            <a href="https://github.com/gnitnuj">GitHub</a>, or
+            <a href="mailto:hello@whatsajunt.ing">say hi</a>.
         </p>
     </section>
+    </main>
 
     <script src="./js/birds.js"></script>
 

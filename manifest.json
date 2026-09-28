@@ -1,7 +1,7 @@
 {
   "name": "a whatsajunting publication",
   "short_name": "whatsajunting",
-  "description": "Junting's blog",
+  "description": "Junting Lu's personal website",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#7BE4D5",

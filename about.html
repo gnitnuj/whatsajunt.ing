@@ -79,15 +79,14 @@
     </head>
 
     <body>
-        <nav>
+        <nav aria-label="Primary navigation">
             <ul>
-                <li id="home_link" class="og"><a href="/">🏠</a></li>
+                <li id="home_link" class="og"><a href="/" aria-label="Home">🏠</a></li>
                 <li><a href="/about.html">about</a></li>
-                <li><a href="/work.html">hire me</a></li>
-                <!-- <li><a href="/blog.html">posts</a></li>
-        <li><a href="/projects.html">projects</a></li> -->
+                <li><a href="https://github.com/gnitnuj">GitHub</a></li>
             </ul>
         </nav>
+        <main>
         <div class="splash compact">
             <div class="splash-wrapper">
                 <div class="splash-copy">
@@ -97,7 +96,7 @@
                     <canvas width="680" height="680"></canvas>
                     <div class="birbs-legend">
                         <b>regenerate art</b>
-                    <button type="button" aria-expanded="false" aria-controls="birbs-note">[<b>?</b>]</button>
+                    <button type="button" aria-label="About the artwork" aria-expanded="false" aria-controls="birbs-note">[<b>?</b>]</button>
                     <div class="birbs-note" id="birbs-note" hidden>
                             This is a little piece of art. It is randomly
                             generated every time you refresh the page. You can
@@ -110,6 +109,28 @@
             <div class="dots"></div>
         </div>
         <section class="content">
+            <p>
+                I'm Junting, a software engineer and aspiring emojineer based
+                in Seattle. I like making things that are useful, fun, or both.
+            </p>
+            <p>
+                I run <a href="https://juluco.dev/">Julu &amp; Co.</a>, my
+                software consultancy. My work combines hands-on development
+                with experience leading engineering teams. I care about how
+                things feel to use, and I'm especially interested in helping
+                people create things.
+            </p>
+            <p>
+                Away from the keyboard, my sister and I are working on a surf
+                retreat in Medewi, Bali. Our plans, along with other places
+                I've owned, are at
+                <a href="https://farfaraway.holdings/">Far Far Away Holdings</a>.
+            </p>
+            <p>
+                One question I keep coming back to: "Can I get someone I don't
+                know to pay $1 for something I built?"
+            </p>
+            <h2>A little backstory</h2>
             <p>
                 As a baby Junting was born in Oakland California, or
                 colloquially referred to as,
@@ -147,39 +168,17 @@
                 <a href="https://www.youtube.com/watch?v=p8XKhCfsTts">56k</a>.
             </p>
 
-            <h3>
-                <span class="og">✨ </span> Do you want us to work together?
-            </h3>
+            <h2><span class="og">☎︎ </span> Say hi</h2>
             <p>
-                I am available for freelance work in a
-                <b>consulting</b> capacity (not as a full-time engineer), or as
-                a tech advisor for your company. I care deeply about users,
-                performance, accessibility, and having things be functional. I
-                am especially interested in projects that help people create
-                things.
-            </p>
-            <p>
-                If you'd like us to work together, check out the ways in which I
-                can
-                <a href="./work.html">help your company</a>.
-            </p>
-            <p></p>
-            <h3><span class="og">☎︎ </span> Do you want to just say hi?</h3>
-            <p>
-                Look at all the social media! Do you see what I just did? You
-                can&#39;t <b>not</b> look now! Action words make people do
-                things they normally wouldn&#39;t. Here, watch this new link I
-                just made to my
-                <a href="https://www.instagram.com/whatsajunting/">Instagram</a
-                >. Here&#39;s another one to my
-                <a href="https://www.facebook.com/juntinglu">Facebook</a>. Boom!
-                I also made a page on
-                <a href="https://www.linkedin.com/in/junting/">LinkedIn</a> but
-                it doesn&#39;t matter too much right now because I&#39;m wayyy
-                too deep in the codes, and the occasional silly content update
-                like this paragraph.
+                <a href="mailto:hello@whatsajunt.ing">Email me</a> if you'd
+                like to chat. You can also find me on
+                <a href="https://www.instagram.com/whatsajunting/">Instagram</a>,
+                <a href="https://www.facebook.com/juntinglu">Facebook</a>, and
+                <a href="https://www.linkedin.com/in/junting/">LinkedIn</a>.
+                My code is on <a href="https://github.com/gnitnuj">GitHub</a>.
             </p>
         </section>
+        </main>
 
         <script src="../js/birds.js"></script>
 

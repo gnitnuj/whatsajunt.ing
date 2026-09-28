@@ -80,13 +80,11 @@
     </head>
 
     <body>
-        <nav>
+        <nav aria-label="Primary navigation">
             <ul>
-                <li id="home_link" class="og"><a href="/">🏠</a></li>
-                <li><a href="/about">about</a></li>
-                <li><a href="/work">hire me</a></li>
-                <li><a href="/blog">posts</a></li>
-                <li><a href="/projects">projects</a></li>
+                <li id="home_link" class="og"><a href="/" aria-label="Home">🏠</a></li>
+                <li><a href="/about.html">about</a></li>
+                <li><a href="https://github.com/gnitnuj">GitHub</a></li>
             </ul>
         </nav>
         <div class="splash compact">
@@ -98,7 +96,7 @@
                     <canvas width="680" height="680"></canvas>
                     <div class="birbs-legend">
                         <b>regenerate art</b>
-                        <button type="button" aria-expanded="false" aria-controls="birbs-note">[<b>?</b>]</button>
+                        <button type="button" aria-label="About the artwork" aria-expanded="false" aria-controls="birbs-note">[<b>?</b>]</button>
                         <div class="birbs-note" id="birbs-note" hidden>
                             This is a little piece of art. It is randomly
                             generated every time you refresh the page. You can
@@ -145,6 +143,22 @@
                     }
                 }
             </style>
+
+            <h2 class="with-butt">2026</h2>
+            <ul class="listing table projects">
+                <li>
+                    <a href="https://juluco.dev/">Julu &amp; Co.</a>
+                    <div>My software consultancy, focused on building products and helping teams move them forward.</div>
+                </li>
+                <li>
+                    <a href="https://farfaraway.holdings/">Far Far Away Holdings</a>
+                    <div>A collection of places I've owned and plans for a surf retreat in Medewi.</div>
+                </li>
+                <li>
+                    <a href="https://junting.me/">junting.me</a>
+                    <div>A small home for my links and a way to book a chat.</div>
+                </li>
+            </ul>
 
             <h2 class="with-butt">2025</h2>
             <ul class="listing table projects">

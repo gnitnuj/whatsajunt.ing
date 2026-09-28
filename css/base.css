@@ -744,6 +744,34 @@ video:focus-visible {
 }
 
 @media screen and (max-width: 600px) {
+  .personal-intro {
+    min-height: 0;
+    padding: var(--spacing-s) 0;
+  }
+
+  .personal-intro .splash-copy {
+    flex-basis: 100%;
+  }
+
+  .personal-intro .splash-wrapper {
+    gap: var(--spacing);
+  }
+
+  .personal-intro p {
+    margin-top: var(--spacing);
+    font-size: 1.2em;
+  }
+
+  .personal-intro #birbs {
+    flex-basis: 220px;
+    width: 220px;
+    margin: 0;
+  }
+
+  .personal-intro .birbs-legend {
+    font-size: var(--font-size-xs);
+  }
+
   .splash.compact .splash-wrapper {
     justify-content: flex-start;
     gap: var(--spacing);

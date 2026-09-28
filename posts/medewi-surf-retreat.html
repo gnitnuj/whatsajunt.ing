@@ -79,12 +79,11 @@
     </head>
 
     <body>
-        <nav>
+        <nav aria-label="Primary navigation">
             <ul>
-                <li id="home_link" class="og"><a href="/">🏠</a></li>
-                <li><a href="/about">about</a></li>
-                <li><a href="/blog">posts</a></li>
-                <li><a href="/projects">projects</a></li>
+                <li id="home_link" class="og"><a href="/" aria-label="Home">🏠</a></li>
+                <li><a href="/about.html">about</a></li>
+                <li><a href="https://github.com/gnitnuj">GitHub</a></li>
             </ul>
         </nav>
         <div class="splash short">
@@ -142,32 +141,10 @@
                 ground. ;)
             </p>
 
-            <h1 id="where-to">The plan.</h1>
-
-            <div id="adobe-dc-view"></div>
-            <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
-            <script type="text/javascript">
-                document.addEventListener(
-                    "adobe_dc_view_sdk.ready",
-                    function () {
-                        var adobeDCView = new AdobeDC.View({
-                            clientId: "ab1b63f3f58d4b55b0c2b4a8e1ea8be0",
-                            divId: "adobe-dc-view",
-                        });
-                        adobeDCView.previewFile(
-                            {
-                                content: {
-                                    location: {
-                                        url: "../images/Medewi-Plans.pdf",
-                                    },
-                                },
-                                metaData: { fileName: "Medewi-Plans.pdf" },
-                            },
-                            { embedMode: "SIZED_CONTAINER" },
-                        );
-                    },
-                );
-            </script>
+            <h1 id="the-plan">The plan.</h1>
+            <p>
+                <a href="/images/Medewi-Plans.pdf">View the Medewi plans (PDF, 11 MB)</a>.
+            </p>
         </section>
 
         <div class="footer">
