@@ -743,12 +743,17 @@ video:focus-visible {
   letter-spacing: 0;
 }
 
-@media screen and (max-width: 600px) {
-  .personal-intro {
-    min-height: 0;
-    padding: var(--spacing-s) 0;
-  }
+/* Keep the homepage together, even in a tall desktop window. */
+.personal-intro {
+  min-height: 0;
+  padding: var(--spacing-s) 0;
+}
 
+.personal-intro #birbs {
+  margin: var(--spacing-s) 0;
+}
+
+@media screen and (max-width: 600px) {
   .personal-intro .splash-copy {
     flex-basis: 100%;
   }
