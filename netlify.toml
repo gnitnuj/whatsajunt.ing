@@ -1,3 +1,15 @@
 [build]
   command = "npm run build"
   publish = "_site"
+
+[[redirects]]
+  from = "/work.html"
+  to = "https://juluco.dev/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/work"
+  to = "https://juluco.dev/"
+  status = 301
+  force = true
