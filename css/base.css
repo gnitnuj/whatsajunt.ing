@@ -812,3 +812,123 @@ video:focus-visible {
     transition: none;
   }
 }
+
+/**********************
+ * Motion
+ *********************/
+/* Cross-document page transitions: the art morphs between pages. */
+@view-transition {
+  navigation: auto;
+}
+
+#birbs canvas {
+  view-transition-name: birbs;
+}
+
+::view-transition-group(birbs) {
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* The nav's red dots slide in instead of popping on. */
+nav a {
+  z-index: 0;
+}
+
+nav a::before {
+  position: absolute;
+  display: block;
+  left: -20px;
+  top: 10px;
+  content: '';
+  height: 100%;
+  width: 120%;
+  background-image: radial-gradient(var(--red) 25%, white 40%);
+  background-size: 6px 6px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+nav a:is(:hover, :focus-visible)::before {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  nav a::before {
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  /* Links: the underline drops a little on hover. */
+  a {
+    text-underline-offset: 2px;
+    transition:
+      color 0.2s ease-in-out,
+      text-underline-offset 0.2s ease-in-out;
+  }
+
+  a:hover {
+    text-underline-offset: 5px;
+  }
+
+  /* Headline and intro rise in on load. */
+  .splash-copy > * {
+    animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .splash-copy > :nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  /* Section headings draw their red underline. */
+  .with-butt:after {
+    transform-origin: left;
+    animation: draw 0.5s 0.15s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .birbs-note:not([hidden]) {
+    transform-origin: bottom right;
+    animation: pop 0.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  /* Content eases in as it scrolls into view, where supported. */
+  @supports (animation-timeline: view()) {
+    .content > :is(p, h2, ul, .subtitle) {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+
+    .with-butt:after {
+      animation-timeline: view();
+      animation-range: entry 20% entry 80%;
+      animation-delay: 0s;
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes draw {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}

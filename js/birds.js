@@ -18,6 +18,7 @@ const p5Polyfill = {
   pop: () => context.restore(),
   translate: (x,y) => context.translate(x,y),
   scale: (x,y) => context.scale(x,y),
+  rotate: (a) => context.rotate(a),
   rect: (x,y,w,h) => {
     context.fillRect(x, y, w, h);
     context.strokeRect(x, y, w, h);
@@ -33,9 +34,9 @@ const p5Polyfill = {
     if (!slice) {
     context.moveTo(x, y);
     }
-    
+
     context.arc(x, y, w/2, start, stop);
-    
+
     context.closePath();
     context.fill();
     context.stroke();
@@ -51,21 +52,66 @@ function birds(p) {
     //'black',  //grey
   ];
   const shapes = [
-    'arc-1', 'arc-2', 'arc-3', 'arc-4', 
+    'arc-1', 'arc-2', 'arc-3', 'arc-4',
     'skip','skip',
   ];
-  
 
-  setup();
+  // Motion: each shape grows into its cell, staggered by a pattern. Each page
+  // load picks one at random, unless the art's container sets data-motion.
+  const MOTIONS = ['wave', 'ripple', 'scatter', 'spin'];
+  const DURATION = 520;
+  const SPREAD = 650;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  function setup() {
-    const canvas = document.querySelector('#birbs > canvas');
+  document
+    .querySelectorAll('#birbs > canvas, [data-birbs] > canvas')
+    .forEach(setup);
 
-    if (!canvas) {
-      return;
-    }
+  function setup(canvas) {
+    const root = canvas.parentElement;
+    const ctx = canvas.getContext('2d');
+    const art = { size: 0, current: null, previous: null, start: 0, raf: 0 };
+    root.dataset.motion ||= p.random(MOTIONS);
 
-    const regenerate = () => draw();
+    const regenerate = () => {
+      art.previous = art.current;
+      art.current = compose(root.dataset.motion);
+      play();
+    };
+
+    const play = () => {
+      cancelAnimationFrame(art.raf);
+      if (reduceMotion.matches) {
+        art.previous = null;
+        render(Infinity);
+        return;
+      }
+      art.start = performance.now();
+      const tick = (now) => {
+        const t = now - art.start;
+        render(t);
+        if (t < SPREAD + DURATION * 1.25) {
+          art.raf = requestAnimationFrame(tick);
+        } else {
+          art.previous = null;
+        }
+      };
+      art.raf = requestAnimationFrame(tick);
+    };
+
+    const render = (t) => {
+      context = ctx;
+      p.noStroke();
+      p.fill('white');
+      p.rect(0, 0, art.size, art.size);
+
+      // Old shapes shrink away just ahead of the new ones growing in.
+      if (art.previous) {
+        drawOps(art.previous, art.size, (op) => 1 - ease(progress(t, op.delay, DURATION * 0.6)), false);
+      }
+      drawOps(art.current, art.size, (op) => easeBack(progress(t, op.delay + DURATION * 0.25, DURATION)), true);
+    };
+
     canvas.addEventListener('click', regenerate);
     canvas.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
@@ -77,8 +123,8 @@ function birds(p) {
     canvas.setAttribute('role', 'button');
     canvas.setAttribute('aria-label', 'Regenerate the artwork');
 
-    const helpButton = document.querySelector('.birbs-legend button');
-    const note = document.querySelector('.birbs-note');
+    const helpButton = root.querySelector('.birbs-legend button');
+    const note = root.querySelector('.birbs-note');
     if (helpButton && note) {
       helpButton.addEventListener('click', () => {
         const isExpanded = helpButton.getAttribute('aria-expanded') === 'true';
@@ -86,20 +132,22 @@ function birds(p) {
         note.hidden = isExpanded;
       });
     }
-    context = canvas.getContext('2d');
 
     const resize = () => {
       const size = canvas.getBoundingClientRect().width;
       const pixelSize = Math.round(size * window.devicePixelRatio);
-      if (!size || (canvas.width === pixelSize && p.width === size)) return;
+      if (!size || (canvas.width === pixelSize && art.size === size)) return;
 
       canvas.width = pixelSize;
       canvas.height = pixelSize;
-      context.setTransform(pixelSize / size, 0, 0, pixelSize / size, 0, 0);
-      p.width = size;
-      p.height = size;
-      p.noStroke();
-      draw();
+      ctx.setTransform(pixelSize / size, 0, 0, pixelSize / size, 0, 0);
+      art.size = size;
+
+      if (art.current) {
+        render(Infinity);
+      } else {
+        regenerate();
+      }
     };
 
     resize();
@@ -107,34 +155,27 @@ function birds(p) {
     window.addEventListener('resize', resize);
   }
 
-  function draw() {
-    const minCells = Math.floor(p.random(5, 7));
+  // Builds the composition as a list of cell ops so it can be animated.
+  function compose(motion) {
+    const n = Math.floor(p.random(5, 7));
+    const rows = n;
+    const cols = n;
+    const grid = Array.from({length: rows}, () => Array(cols).fill(null));
+    const set = (row, col, shape, color) => {
+      if (row >= 0 && col >= 0 && row < rows && col < cols) {
+        grid[row][col] = shape ? {shape, color} : null;
+      }
+    };
+    const extras = [];
+    const finish = () => toOps(grid, extras, n, motion);
 
-    // Background.
-    p.fill('white');
-    p.rect(0, 0, p.width, p.height);
-
-    let rows, cols, cellSize;
-    if (p.width <= p.height) {
-      cols = minCells;
-      cellSize = Math.floor(p.width / cols);
-      rows = Math.floor(p.height / cellSize);
-    } else {
-      rows = minCells;
-      cellSize = p.height / rows;
-      cols = Math.ceil(p.width / cellSize);
-    }
-    
     for (let j = 0; j < cols; j++) {
       for (let i = 0; i < rows; i++) {
-        p.noStroke();
-        p.fill(p.random(colors));
-        
+        const color = p.random(colors);
         const shape = p.random(shapes);
-        drawShapeForCell(shape, cellSize, i, j);
+        set(i, j, shape === 'skip' ? null : shape, color);
       }
     }
-    
 
     // Now force-pick some shapes.
 
@@ -143,27 +184,18 @@ function birds(p) {
     // arc-2 arc-1
     const availableRows = Array.from({length: rows-1}, (_, i) => i);
     const availableCols = Array.from({length: cols-1}, (_, i) => i);
-    
+
     let row = p.random(availableRows);
     let col = p.random(availableCols);
     availableRows.splice(availableRows.indexOf(row), 1);
     availableRows.splice(availableRows.indexOf(row + 1), 1);
     availableCols.splice(availableCols.indexOf(col), 1);
     availableCols.splice(availableCols.indexOf(col + 1), 1);
-    
-    // Reset.
-    p.fill('white');
-    drawShapeForCell('square', cellSize, row, col);
-    drawShapeForCell('square', cellSize, row, col + 1);
-    drawShapeForCell('square', cellSize, row + 1, col);
-    drawShapeForCell('square', cellSize, row + 1, col + 1);
 
-    p.fill('black');
-    drawShapeForCell('arc-3', cellSize, row, col);
-    drawShapeForCell('arc-4', cellSize, row, col + 1);
-    //p.fill(p.random(colors));
-    drawShapeForCell('arc-2', cellSize, row + 1, col);
-    drawShapeForCell('arc-1', cellSize, row + 1, col + 1);
+    set(row, col, 'arc-3', 'black');
+    set(row, col + 1, 'arc-4', 'black');
+    set(row + 1, col, 'arc-2', 'black');
+    set(row + 1, col + 1, 'arc-1', 'black');
 
     // Birb.
     //    arc-3   empty
@@ -172,24 +204,17 @@ function birds(p) {
     col = p.random(availableCols);
     if (row === undefined || col === undefined) {
       console.log('out of cells for birb');
-      return;
+      return finish();
     }
     availableRows.splice(availableRows.indexOf(row), 1);
     availableRows.splice(availableRows.indexOf(row + 1), 1);
     availableCols.splice(availableCols.indexOf(col), 1);
     availableCols.splice(availableCols.indexOf(col + 1), 1);
 
-    p.fill('white');
-    drawShapeForCell('square', cellSize, row, col);
-    drawShapeForCell('square', cellSize, row, col + 1);
-    drawShapeForCell('square', cellSize, row + 1, col);
-    drawShapeForCell('square', cellSize, row + 1, col + 1);
-
-    p.fill('black');
-    drawShapeForCell('arc-3', cellSize, row, col);
-    drawShapeForCell('arc-2', cellSize, row + 1, col);
-    drawShapeForCell('arc-1', cellSize, row + 1, col + 1);
-    
+    set(row, col, 'arc-3', 'black');
+    set(row, col + 1, null);
+    set(row + 1, col, 'arc-2', 'black');
+    set(row + 1, col + 1, 'arc-1', 'black');
 
     // Grass:
     // leaf-1 leaf-2
@@ -198,41 +223,82 @@ function birds(p) {
     col = p.random(availableCols);
     if (row === undefined || col === undefined) {
       console.log('out of cells for grass');
-      return;
+      return finish();
     }
-    // Reset
-    p.fill('white');
-    drawShapeForCell('square', cellSize, row, col);
-    drawShapeForCell('square', cellSize, row, col + 1);
-    drawShapeForCell('square', cellSize, row+1, col);
-    drawShapeForCell('square', cellSize, row+1, col + 1);
-    
-    availableRows.splice(availableRows.indexOf(row), 1);
-    availableCols.splice(availableCols.indexOf(col), 1);
-    availableRows.splice(availableRows.indexOf(row), 1);
-    availableCols.splice(availableCols.indexOf(col+1), 1);
+    set(row, col, 'leaf-1', 'black');
+    set(row, col + 1, 'leaf-2', 'black');
+    set(row + 1, col, null);
+    set(row + 1, col + 1, null);
+    extras.push({shape: 'stem', color: 'black', row: row + 1, col: col + 1});
 
-    p.fill('black');
-    drawShapeForCell('leaf-1', cellSize, row, col);
-    drawShapeForCell('leaf-2', cellSize, row, col+1);
-    const y = (row+1) * cellSize;
-    const x = col * cellSize;
-    p.push();
-    p.translate(x, y);
-    p.rect(cellSize-2, 0, 4, cellSize);
-    p.pop();
+    return finish();
   }
 
-  function drawShapeForCell(shape, cellSize, i, j) {
-    if (i < 0 || j < 0) return;
+  function toOps(grid, extras, n, motion) {
+    const ops = [];
+    grid.forEach((cells, row) => cells.forEach((cell, col) => {
+      if (cell) ops.push({...cell, row, col});
+    }));
+    ops.push(...extras);
 
-    const y = i * cellSize;
-    const x = j * cellSize;
+    for (const op of ops) {
+      const x = (op.col + 0.5) / n;
+      const y = (op.row + 0.5) / n;
+      op.delay = SPREAD * delayFor(motion, x, y);
+    }
+    return {n, ops, motion};
+  }
 
-    p.push();
-    p.translate(x, y);
-    drawShape(shape, cellSize);
-    p.pop();
+  function delayFor(motion, x, y) {
+    switch (motion) {
+      case 'scatter':
+        return Math.random();
+      case 'ripple':
+        return Math.min(1, Math.hypot(x - 0.5, y - 0.5) / 0.7);
+      default:
+        return (x + y) / 2;
+    }
+  }
+
+  function drawOps(art, size, scaleFor, isEntering) {
+    const cellSize = Math.floor(size / art.n);
+    for (const op of art.ops) {
+      const s = scaleFor(op);
+      if (s <= 0) continue;
+
+      p.fill(op.color);
+      p.push();
+      if (op.shape === 'stem') {
+        // The stem grows down from the leaves.
+        p.translate(op.col * cellSize, op.row * cellSize);
+        p.scale(1, s);
+        p.rect(-2, 0, 4, cellSize);
+      } else {
+        const d = cellSize / 2;
+        p.translate(op.col * cellSize + d, op.row * cellSize + d);
+        if (art.motion === 'spin' && isEntering) {
+          p.rotate((1 - Math.min(s, 1)) * -p.HALF_PI);
+        }
+        p.scale(s, s);
+        p.translate(-d, -d);
+        drawShape(op.shape, cellSize);
+      }
+      p.pop();
+    }
+  }
+
+  function progress(t, delay, duration) {
+    return Math.max(0, Math.min(1, (t - delay) / duration));
+  }
+
+  function ease(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  // Overshoots a touch, so shapes land with a little bounce.
+  function easeBack(t) {
+    const c = 1.4;
+    return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2);
   }
 
   function drawShape(shape, cellSize, slice=false) {
